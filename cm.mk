@@ -1,6 +1,9 @@
 # Inherit AOSP device configuration for supersonic.
 $(call inherit-product, device/htc/supersonic/full_supersonic.mk)
 
+# Inherit some common cm stuff.
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+
 # Inherit some common pac stuff.
 $(call inherit-product, vendor/pac/config/pac_common.mk)
 $(call inherit-product, vendor/pac/config/themes_common.mk)
