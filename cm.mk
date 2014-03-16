@@ -1,13 +1,14 @@
 # Inherit AOSP device configuration for supersonic.
 $(call inherit-product, device/htc/supersonic/full_supersonic.mk)
 
-# Inherit some common evervolv stuff.
-$(call inherit-product, vendor/ev/config/common_full_phone.mk)
+# Inherit some common pac stuff.
+$(call inherit-product, vendor/pac/config/pac_common.mk)
+$(call inherit-product, vendor/pac/config/themes_common.mk)
 
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := ev_supersonic
+PRODUCT_NAME := pac_supersonic
 PRODUCT_BRAND := sprint
 PRODUCT_DEVICE := supersonic
 PRODUCT_MODEL := PC36100
@@ -17,12 +18,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_supersonic BUILD_FINGERPRINT=sp
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME := Acies
 
-PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Evo 4G\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
-
-# Hot reboot
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/ev/overlay/hot_reboot
-
 # Copy compatible prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/ev/prebuilt/wvga/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/pac/prebuilt/480x800/bootanimation.zip:system/media/bootanimation.zip
